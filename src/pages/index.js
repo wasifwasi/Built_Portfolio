@@ -1,4 +1,4 @@
-// src/pages/index.js
+
 // src/pages/index.js
 import Hero from '../components/Hero';
 import Projects from '../components/Projects';
@@ -13,8 +13,8 @@ export default function Home() {
     <div>
       <Hero />
       <About />
-      <Skills />
       <Projects />
+      <Skills />
       <Certifications />
       <Resume />
       <Contact />

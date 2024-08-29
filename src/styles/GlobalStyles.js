@@ -8,9 +8,9 @@ const GlobalStyles = createGlobalStyle`
     font-family: 'Arial', sans-serif;
     transition: all 0.50s linear;
   }
-//   html {
-//     scroll-behavior: smooth;
-//   }
+  html {
+    scroll-behavior: smooth;
+  }
 `;
 
 export default GlobalStyles;

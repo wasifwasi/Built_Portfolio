@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useTheme } from '../theme/ThemeContext';
+import { useState, useEffect } from 'react';
 
 const Nav = styled.nav`
   background: ${({ theme }) => theme.body};
@@ -41,23 +42,33 @@ const ToggleButton = styled.button`
   }
 `;
 
+
 export default function Navbar() {
-  const { toggleTheme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
+  const [buttonText, setButtonText] = useState('Light Mode');
+
+  useEffect(() => {
+    if (theme === 'light') {
+      setButtonText('Dark Mode');
+    } else {
+      setButtonText('Light Mode');
+    }
+  }, [theme]);
 
   return (
     <Nav>
       <Link href="/" passHref>
-        <NavLink>Your Logo</NavLink>
+        <NavLink></NavLink>
       </Link>
       <NavLinks>
         <Link href="#about" passHref>
           <NavLink>About</NavLink>
+        </Link>       
+        <Link href="#projects" passHref>
+          <NavLink>Projects</NavLink>
         </Link>
         <Link href="#skills" passHref>
           <NavLink>Skills</NavLink>
-        </Link>
-        <Link href="#projects" passHref>
-          <NavLink>Projects</NavLink>
         </Link>
         <Link href="#certifications" passHref>
           <NavLink>Certifications</NavLink>
@@ -68,7 +79,7 @@ export default function Navbar() {
         <Link href="#contact" passHref>
           <NavLink>Contact</NavLink>
         </Link>
-        <ToggleButton onClick={toggleTheme}>Toggle Theme</ToggleButton>
+        <ToggleButton onClick={toggleTheme}>{buttonText}</ToggleButton>
       </NavLinks>
     </Nav>
   );
