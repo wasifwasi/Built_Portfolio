@@ -7,6 +7,7 @@ const PictureWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
+  
 `;
 
 const ProfileImage = styled(Image)`

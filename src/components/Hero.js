@@ -2,6 +2,7 @@
 import { useTheme } from '../theme/ThemeContext';
 import styled from 'styled-components';
 import ProfilePicture from './ProfilePic';
+// import { motion } from 'framer-motion';
 
 
 const HeroSection = styled.section`
@@ -9,6 +10,7 @@ const HeroSection = styled.section`
   flex-direction: column;
   align-items: center;
   padding: 50px;
+  background: #269baa57;
 `;
 
 const Name = styled.h1`
@@ -21,12 +23,12 @@ const Tagline = styled.h2`
   color: ${({ theme }) => theme.text};
 `;
 
-const PictureWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-`;
+// const PictureWrapper = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   padding: 20px;
+// `;
 
 export default function Hero() {
   const { toggleTheme } = useTheme();
