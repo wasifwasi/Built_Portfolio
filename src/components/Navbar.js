@@ -1,8 +1,10 @@
-// src/components/Navbar.js
+
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useTheme } from '../theme/ThemeContext';
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { FaBars } from 'react-icons/fa';
 
 const Nav = styled.nav`
   background: ${({ theme }) => theme.body};
@@ -11,17 +13,31 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  
 `;
 
 const NavLinks = styled.div`
   display: flex;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    display: ${({ isOpen }) => (isOpen ? 'flex' : 'none')};
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: ${({ theme }) => theme.body};
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
 `;
 
 const NavLink = styled.a`
   color: ${({ theme }) => theme.text};
   text-decoration: none;
   font-weight: bold;
+  border-bottom: ${({ isActive, theme }) => isActive ? `2px solid ${theme.primary}` : 'none'};
 
   &:hover {
     color: ${({ theme }) => theme.primary};
@@ -42,10 +58,24 @@ const ToggleButton = styled.button`
   }
 `;
 
+const Hamburger = styled.div`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+`;
+
+
+
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const [buttonText, setButtonText] = useState('Light Mode');
+  const [isOpen, setIsOpen] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
     if (theme === 'light') {
@@ -58,26 +88,29 @@ export default function Navbar() {
   return (
     <Nav>
       <Link href="/" passHref>
-        <NavLink></NavLink>
+        <NavLink isActive={router.pathname === '/'}>Home</NavLink>
       </Link>
-      <NavLinks>
+      <Hamburger onClick={() => setIsOpen(!isOpen)}>
+        <FaBars />
+      </Hamburger>
+      <NavLinks isOpen={isOpen}>
         <Link href="#about" passHref>
-          <NavLink>About</NavLink>
-        </Link>       
+          <NavLink isActive={router.pathname === '/about'}>About</NavLink>
+        </Link>
         <Link href="#projects" passHref>
-          <NavLink>Projects</NavLink>
+          <NavLink isActive={router.pathname === '/projects'}>Projects</NavLink>
         </Link>
         <Link href="#skills" passHref>
-          <NavLink>Skills</NavLink>
+          <NavLink isActive={router.pathname === '/skills'}>Skills</NavLink>
         </Link>
         <Link href="#certifications" passHref>
-          <NavLink>Certifications</NavLink>
+          <NavLink isActive={router.pathname === '/certifications'}>Certifications</NavLink>
         </Link>
         <Link href="#resume" passHref>
-          <NavLink>Resume</NavLink>
+          <NavLink isActive={router.pathname === '/resume'}>Resume</NavLink>
         </Link>
         <Link href="#contact" passHref>
-          <NavLink>Contact</NavLink>
+          <NavLink isActive={router.pathname === '/contact'}>Contact</NavLink>
         </Link>
         <ToggleButton onClick={toggleTheme}>{buttonText}</ToggleButton>
       </NavLinks>
