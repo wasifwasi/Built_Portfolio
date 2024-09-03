@@ -3,18 +3,33 @@ import ProjectCard from "./ProjectCard";
 import styled from "@emotion/styled";
 
 const ProjectWrapper = styled.div`
-  background-color: #f5f5f5;
+  background-color: #269baa57;
   padding: 50px 0;
 `;
 
 const Container = styled.div`
+  background-color:white;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the children horizontally */
+`;
+const Carddis = styled.div`
+  background-color: #ffffffd0;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Ensure the cards stack vertically */
+  min-height: 100vh; /* Ensure the container takes up the full height of the viewport */
+  padding: 2rem; /* Optional padding */
+
 `;
 
 const SectionTitle = styled.h2`
+
   font-size: 2rem;
   color: #333;
   margin-bottom: 40px;
@@ -60,8 +75,9 @@ const Projects: React.FC = () => {
       <ProjectWrapper id="projects">
         <Container>
           <SectionTitle>Projects</SectionTitle>
+         <Carddis>
           <ProjectCard />
-
+          </Carddis>
         </Container>
       </ProjectWrapper>
     </>
