@@ -1,4 +1,3 @@
-
 import Link from 'next/link';
 import styled from 'styled-components';
 import { useTheme } from '../theme/ThemeContext';
@@ -6,17 +5,26 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { FaBars } from 'react-icons/fa';
 
+// Type for NavLink active state
+interface NavLinkProps {
+  isActive?: boolean;
+}
+
+interface NavLinksProps {
+  isOpen: boolean;
+}
+
 const Nav = styled.nav`
   background: ${({ theme }) => theme.body};
+  border-radius: 10px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  
 `;
 
-const NavLinks = styled.div`
+const NavLinks = styled.div<NavLinksProps>`
   display: flex;
   gap: 20px;
 
@@ -33,11 +41,12 @@ const NavLinks = styled.div`
   }
 `;
 
-const NavLink = styled.a`
+const NavLink = styled.a<NavLinkProps>`
   color: ${({ theme }) => theme.text};
   text-decoration: none;
   font-weight: bold;
-  border-bottom: ${({ isActive, theme }) => isActive ? `2px solid ${theme.primary}` : 'none'};
+  border-bottom: ${({ isActive, theme }) =>
+    isActive ? `2px solid ${theme.primary}` : 'none'};
 
   &:hover {
     color: ${({ theme }) => theme.primary};
@@ -68,13 +77,10 @@ const Hamburger = styled.div`
   }
 `;
 
-
-
-
-export default function Navbar() {
+const Navbar: React.FC = () => {
   const { theme, toggleTheme } = useTheme();
-  const [buttonText, setButtonText] = useState('Light Mode');
-  const [isOpen, setIsOpen] = useState(false);
+  const [buttonText, setButtonText] = useState<string>('Light Mode');
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   const router = useRouter();
 
   useEffect(() => {
@@ -116,4 +122,6 @@ export default function Navbar() {
       </NavLinks>
     </Nav>
   );
-}
+};
+
+export default Navbar;

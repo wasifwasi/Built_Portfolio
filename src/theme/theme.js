@@ -3,7 +3,7 @@
 export const lightTheme = {
     body: '#FFF',
     text: '#363537',
-    toggleBorder: '#FFF',
+    toggleBorder: '#269baa57',
     background: '#363537',
   };
   

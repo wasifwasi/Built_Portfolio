@@ -6,6 +6,7 @@ import { SiNextdotjs, SiMongodb, SiMysql } from 'react-icons/si';
 const SkillsSection = styled.section`
   padding: 50px;
   background: ${({ theme }) => theme.body};
+  border-radius: 10px;
 `;
 
 const SkillList = styled.ul`
@@ -36,31 +37,37 @@ const SkillItem = styled.li`
 const IconContainer = styled.div`
   margin-right: 10px;
   font-size: 2rem;
+  
 `;
 
-export default function Skills() {
-  const skills = [
-    { name: 'JavaScript', icon: <FaJsSquare /> },
-    { name: 'React', icon: <FaReact /> },
-    { name: 'Next.js', icon: <SiNextdotjs /> },
-    { name: 'Node.js', icon: <FaNodeJs /> },
-    { name: 'CSS', icon: <FaCss3Alt /> },
-    { name: 'HTML', icon: <FaHtml5 /> },
-    { name: 'Python', icon: <FaPython /> },
-    { name: 'npm', icon: <FaNpm /> },
-    { name: 'GitHub', icon: <FaGithub /> },
-    { name: 'Figma', icon: <FaFigma /> },
-    { name: 'WordPress', icon: <FaWordpress /> },
-    { name: 'Shopify', icon: <FaShopify /> },
-    { name: 'SQL', icon: <SiMysql /> },
-    { name: 'MongoDB', icon: <SiMongodb /> },
-  ];
+interface Skill {
+  name: string;
+  icon: JSX.Element;
+}
 
+const skills: Skill[] = [
+  { name: 'JavaScript', icon: <FaJsSquare /> },
+  { name: 'React', icon: <FaReact /> },
+  { name: 'Next.js', icon: <SiNextdotjs /> },
+  { name: 'Node.js', icon: <FaNodeJs /> },
+  { name: 'CSS', icon: <FaCss3Alt /> },
+  { name: 'HTML', icon: <FaHtml5 /> },
+  { name: 'Python', icon: <FaPython /> },
+  { name: 'npm', icon: <FaNpm /> },
+  { name: 'GitHub', icon: <FaGithub /> },
+  { name: 'Figma', icon: <FaFigma /> },
+  { name: 'WordPress', icon: <FaWordpress /> },
+  { name: 'Shopify', icon: <FaShopify /> },
+  { name: 'SQL', icon: <SiMysql /> },
+  { name: 'MongoDB', icon: <SiMongodb /> },
+];
+
+const Skills: React.FC = () => {
   return (
     <SkillsSection id="skills">
       <h2>Skills</h2>
       <SkillList>
-        {skills.map(skill => (
+        {skills.map((skill) => (
           <SkillItem key={skill.name}>
             <IconContainer>{skill.icon}</IconContainer>
             {skill.name}
@@ -69,4 +76,6 @@ export default function Skills() {
       </SkillList>
     </SkillsSection>
   );
-}
+};
+
+export default Skills;

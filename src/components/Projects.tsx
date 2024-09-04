@@ -5,10 +5,11 @@ import styled from "@emotion/styled";
 const ProjectWrapper = styled.div`
   background-color: #269baa57;
   padding: 50px 0;
+  border-radius: 10px;
 `;
 
 const Container = styled.div`
-  background-color:white;
+  // background-color:#269baa57;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -18,7 +19,7 @@ const Container = styled.div`
   align-items: center; /* Center the children horizontally */
 `;
 const Carddis = styled.div`
-  background-color: #ffffffd0;
+  // background-color: #ffffffd0;
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center; /* Center vertically */
@@ -30,23 +31,23 @@ const Carddis = styled.div`
 
 const SectionTitle = styled.h2`
 
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 40px;
-  position: relative;
-  display: inline-block;
+  // font-size: 2rem;
+  // color: #333;
+  // margin-bottom: 40px;
+  // position: relative;
+  // display: inline-block;
 
-  &:before {
-    content: "";
-    position: absolute;
-    width: 60px;
-    height: 5px;
-    background-color: #151418;
-    bottom: -10px;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2.5px;
-  }
+  // &:before {
+  //   content: "";
+  //   position: absolute;
+  //   width: 60px;
+  //   height: 5px;
+  //   background-color: #151418;
+  //   bottom: -10px;
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  //   border-radius: 2.5px;
+  // }
 `;
 
 // const SVGBackground = styled.svg`
@@ -74,7 +75,8 @@ const Projects: React.FC = () => {
       </SVGBackground> */}
       <ProjectWrapper id="projects">
         <Container>
-          <SectionTitle>Projects</SectionTitle>
+          <h2><SectionTitle>Projects</SectionTitle></h2>
+          
          <Carddis>
           <ProjectCard />
           </Carddis>

@@ -11,6 +11,7 @@ const HeroSection = styled.section`
   align-items: center;
   padding: 50px;
   background: #269baa57;
+  border-radius: 10px;
 `;
 
 const Name = styled.h1`
