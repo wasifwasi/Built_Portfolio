@@ -1,7 +1,3 @@
-Here’s a sample **README** for your portfolio project on GitHub:
-
----
-
 # Built Portfolio
 
 This is a personal portfolio website built using **Next.js**. The project showcases my development skills and projects, including full-stack and cross-platform applications.
