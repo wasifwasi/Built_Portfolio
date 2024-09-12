@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 const ContactSection = styled.section`
-  padding: 50px;
+  padding: 3.125rem; 
   background: ${({ theme }) => theme.body};
   text-align: center;
 `;
@@ -11,32 +11,32 @@ const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem; 
 `;
 
 const Input = styled.input`
-  padding: 10px;
+  padding: 0.625rem; 
   width: 100%;
-  max-width: 400px;
-  border: 1px solid ${({ theme }) => theme.text};
-  border-radius: 4px;
+  max-width: 25rem;
+  border: 0.0625rem solid ${({ theme }) => theme.text}; 
+  border-radius: 0.25rem;
 `;
 
 const TextArea = styled.textarea`
-  padding: 10px;
+  padding: 0.625rem;
   width: 100%;
-  max-width: 400px;
-  border: 1px solid ${({ theme }) => theme.text};
-  border-radius: 4px;
+  max-width: 25rem; 
+  border: 0.0625rem solid ${({ theme }) => theme.text}; 
+  border-radius: 0.25rem; 
   resize: none;
 `;
 
 const SubmitButton = styled.button`
   background: ${({ theme }) => theme.primary};
   color: white;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem; 
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem; 
   cursor: pointer;
 
   &:hover {
