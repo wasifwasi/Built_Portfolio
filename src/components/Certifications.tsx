@@ -92,8 +92,8 @@ export default function Certifications() {
       image: '/certificates/daabi.png',  // Image in the public folder
     },
     {
-      title: 'React Professional Certification',
-      organization: 'ABC Academy',
+      title: 'Machine Learning Certification',
+      organization: 'Simplilearn',
       date: 'March 2024',
       image: '/certificates/ml.png',  // Image in the public folder
     },
