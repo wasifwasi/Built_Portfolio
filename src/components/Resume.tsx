@@ -12,7 +12,7 @@ const ResumeSection = styled.section`
 const ResumeButton = styled(motion.a)`
   display: inline-block;
   background: ${({ theme }) => theme.primary};
-  color: #8f03acff;
+  color: #068a9bff;
   padding: 10px 20px;
   border-radius: 8px;
   text-decoration: none;
@@ -30,9 +30,9 @@ const Resume: FC = () => {
       <h2>Resume</h2>
       <p>You can download my resume by clicking the button below.</p>
       <ResumeButton
-        href="/path/to/your-resume.pdf"
+        href="/resume.pdf"
         download
-        whileHover={{ scale: 1.05, backgroundColor: "#c52626" }}
+        whileHover={{ scale: 1.05, backgroundColor: "#b8dee4ff" }}
         whileTap={{ scale: 0.95 }}
         transition={{ type: "spring", stiffness: 300 }}
       >

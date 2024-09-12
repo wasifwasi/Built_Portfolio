@@ -42,7 +42,7 @@ const SocialContainer = styled.div`
       font-size: 2.5rem;
       color: #068a9bff;
       &:hover {
-        color: #1d1527;
+        color: #7b99ace5;
       }
     }
 
