@@ -42,4 +42,3 @@ This project is open-source under the MIT license.
 
 --- 
 
-This provides a clear structure and highlights the key aspects of your portfolio project.
