@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import ScrollAnimation from "react-animate-on-scroll";
 
 const SocialContainer = styled.div`
-  position: fixed;
+  position: relative;
   top: 48%;
   left: 1.5rem;
   transform: translateY(-50%);
