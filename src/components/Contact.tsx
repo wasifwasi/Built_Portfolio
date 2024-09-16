@@ -86,7 +86,7 @@ export default function Contact() {
 
     // If valid, send email
     emailjs
-      .send('service_a2smvdq', 'template_89y28tn', formData, '8-h7_VlG3-fN0uo_f')
+      .send('service_a2smvdq', 'template_7nmtc5p', formData, '8-h7_VlG3-fN0uo_f')
       .then(
         (result) => {
           console.log(result.text);
