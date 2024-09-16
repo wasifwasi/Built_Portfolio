@@ -1,13 +1,17 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
-import emailjs from 'emailjs-com';
-import { z } from 'zod';
+import React, { useState } from "react";
+import styled from "styled-components";
+import emailjs from "emailjs-com";
+import { z } from "zod";
 
 // Zod schema for form validation
 const contactSchema = z.object({
-  name: z.string().min(2, { message: "Name must be at least 2 characters long" }),
+  name: z
+    .string()
+    .min(2, { message: "Name must be at least 2 characters long" }),
   email: z.string().email({ message: "Invalid email address" }),
-  message: z.string().min(10, { message: "Message must be at least 10 characters long" }),
+  message: z
+    .string()
+    .min(10, { message: "Message must be at least 10 characters long" }),
 });
 
 type ContactFormData = z.infer<typeof contactSchema>;
@@ -58,14 +62,16 @@ const SubmitButton = styled.button`
 
 export default function Contact() {
   const [formData, setFormData] = useState<ContactFormData>({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -86,20 +92,25 @@ export default function Contact() {
 
     // If valid, send email
     emailjs
-      .send('service_a2smvdq', 'template_89y28tn', formData, '8-h7_VlG3-fN0uo_f')
+      .send(
+        "service_a2smvdq",
+        "template_7nmtc5p",
+        formData,
+        "8-h7_VlG3-fN0uo_f"
+      )
       .then(
         (result) => {
           console.log(result.text);
-          alert('Message sent successfully!');
+          alert("Message sent successfully!");
         },
         (error) => {
           console.log(error.text);
-          alert('Failed to send message.');
+          alert("Failed to send message.");
         }
       );
 
     // Clear the form and errors
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
     setErrors({});
   };
 
@@ -115,7 +126,7 @@ export default function Contact() {
           onChange={handleChange}
           required
         />
-        {errors.name && <p style={{ color: 'red' }}>{errors.name}</p>}
+        {errors.name && <p style={{ color: "red" }}>{errors.name}</p>}
 
         <Input
           type="email"
@@ -125,7 +136,7 @@ export default function Contact() {
           onChange={handleChange}
           required
         />
-        {errors.email && <p style={{ color: 'red' }}>{errors.email}</p>}
+        {errors.email && <p style={{ color: "red" }}>{errors.email}</p>}
 
         <TextArea
           name="message"
@@ -134,7 +145,7 @@ export default function Contact() {
           onChange={handleChange}
           required
         />
-        {errors.message && <p style={{ color: 'red' }}>{errors.message}</p>}
+        {errors.message && <p style={{ color: "red" }}>{errors.message}</p>}
 
         <SubmitButton type="submit">Send Message</SubmitButton>
       </ContactForm>

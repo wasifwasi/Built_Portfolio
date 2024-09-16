@@ -8,6 +8,7 @@ import Contact from "../components/Contact";
 import Resume from "../components/Resume";
 import ScrollToTop from "../components/ScrollToTop";
 import FixSocialIcon from "../components/SocialIcon";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export default function Homes() {
   return (
