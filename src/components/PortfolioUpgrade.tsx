@@ -149,49 +149,7 @@ const PortfolioUpgrade = () => {
             ))}
           </motion.div>
           
-          {/* CTA with floating animation */}
-          <motion.div 
-            className="flex flex-col items-center"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.8 }}
-          >
-            <motion.a
-              href="mailto:contact@example.com"
-              className="relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-xl font-semibold flex items-center gap-2 overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              onHoverStart={() => setIsHovered(true)}
-              onHoverEnd={() => setIsHovered(false)}
-            >
-              <motion.span 
-                className="relative z-10"
-                animate={{ 
-                  x: isHovered ? [0, 5, -5, 0] : 0 
-                }}
-                transition={{ duration: 0.5 }}
-              >
-                Contact Me
-              </motion.span>
-              {isHovered && (
-                <>
-                  <motion.span 
-                    className="absolute inset-0 bg-white opacity-10"
-                    initial={{ x: '-100%' }}
-                    animate={{ x: '100%' }}
-                    transition={{ duration: 0.8 }}
-                  />
-                  <motion.span 
-                    className="absolute inset-0 bg-white opacity-5"
-                    initial={{ x: '-100%' }}
-                    animate={{ x: '100%' }}
-                    transition={{ duration: 0.8, delay: 0.3 }}
-                  />
-                </>
-              )}
-            </motion.a>
-          </motion.div>
-        </div>
+        
         
         {/* Floating particles */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
