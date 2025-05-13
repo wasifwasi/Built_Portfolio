@@ -9,20 +9,13 @@ import Resume from "../components/Resume";
 import ScrollToTop from "../components/ScrollToTop";
 import FixSocialIcon from "../components/SocialIcon";
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import PortfolioUpgrade from "../components/PortfolioUpgrade";
 
 export default function Homes() {
   return (
    
       <div >
-{/*         <Hero />
-        <About />
-        <Projects />
-        <Skills />
-        <Certifications />
-        <Resume />
-        <Contact />
-        <FixSocialIcon/>
-        <ScrollToTop/> */}
-        
+        <PortfolioUpgrade/>
+      <div/>
   );
 }
