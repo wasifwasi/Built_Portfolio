@@ -82,7 +82,6 @@ const PortfolioUpgrade = () => {
               animate={{ y: [0, -5, 0] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
-              P
             </motion.span>
           </motion.div>
           
@@ -190,20 +189,6 @@ const PortfolioUpgrade = () => {
                   />
                 </>
               )}
-            </motion.a>
-            
-            <motion.a
-              href="mailto:contact@example.com"
-              className="mt-4 text-blue-600 font-medium hover:underline flex items-center gap-1"
-              whileHover={{ x: 3 }}
-            >
-              Need immediate access?
-              <motion.span
-                animate={{ x: [0, 3, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity }}
-              >
-                👉
-              </motion.span>
             </motion.a>
           </motion.div>
         </div>
