@@ -16,6 +16,6 @@ export default function Homes() {
    
       <div >
         <PortfolioUpgrade/>
-      <div/>
+      </div>
   );
 }
